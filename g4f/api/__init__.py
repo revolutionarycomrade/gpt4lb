@@ -149,7 +149,7 @@ class Api:
         @self.app.post("/v1/chat/completions")
         async def chat_completions(config: ChatCompletionsForm, request: Request = None, provider: str = None):
             try:
-                config.provider = provider if config.provider is None else config.provider
+                config.provider = "Liaobots" # = provider if config.provider is None else config.provider
                 if config.api_key is None and request is not None:
                     auth_header = request.headers.get("Authorization")
                     if auth_header is not None:
