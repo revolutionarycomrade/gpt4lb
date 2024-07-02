@@ -220,7 +220,7 @@ def run_api(
     workers: int = None,
     use_colors: bool = None
 ) -> None:
-    print(f'Starting server... [g4f v-{g4f.version.utils.current_version}]' + (" (debug)" if debug else ""))
+    print(f'Starting server...' + (" (debug)" if debug else ""))
     if use_colors is None:
         use_colors = debug
     if bind is not None:
