@@ -11,13 +11,13 @@ from ..requests import raise_for_status
 
 models = {
     "gpt-4o": {
-        "context": "32K",
+        "context": "8K",
         "id": "gpt-4o",
-        "maxLength": 128000,
+        "maxLength": 31200,
         "model": "ChatGPT",
         "name": "GPT-4o",
         "provider": "OpenAI",
-        "tokenLimit": 32768,
+        "tokenLimit": 7800,
     },
     "gpt-3.5-turbo": {
         "id": "gpt-3.5-turbo",
