@@ -153,6 +153,7 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
                 "key": "",
                 "prompt": sys, #kwargs.get("system_message", "You are a helpful assistant."),
             }
+            print(messages)
             if not cls._auth_code:
                 async with session.post(
                     "https://liaobots.work/recaptcha/api/login",
@@ -182,6 +183,7 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
                         if b"<html coupert-item=" in chunk:
                             raise RuntimeError("Invalid session")
                         if chunk:
+                            print(chunk.decode())
                             yield chunk.decode(errors="ignore")
             except:
                 try:
