@@ -149,7 +149,7 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
             if messages[0]["role"] == "system":
                 sys = messages[0]["content"]
                 del messages[0]
-            if messages[1]["role"] == "system" and messages[1]["content"] == "[Start a new Chat]"
+            if messages[1]["role"] == "system" and messages[1]["content"] == "[Start a new Chat]":
                 print("removed")
                 del messages[1]
             data = {
