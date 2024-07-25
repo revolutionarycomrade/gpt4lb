@@ -146,12 +146,12 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
             cookie_jar=cls._cookie_jar,
             connector=get_connector(connector, proxy, True)
         ) as session:
-            if messages[0]["role"] == "system":
-                sys = messages[0]["content"]
-                del messages[0]
             if messages[1]["role"] == "system" and messages[1]["content"] == "[Start a new Chat]":
                 print("removed")
                 del messages[1]
+            if messages[0]["role"] == "system":
+                sys = messages[0]["content"]
+                del messages[0]
             data = {
                 "conversationId": str(uuid.uuid4()),
                 "model": models[cls.get_model(model)],
