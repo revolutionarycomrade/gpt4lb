@@ -146,6 +146,9 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
             cookie_jar=cls._cookie_jar,
             connector=get_connector(connector, proxy, True)
         ) as session:
+            if messages[0]["role"] == "system":
+                sys = messages[0]["content"]
+                del messages[0]
             data = {
                 "conversationId": str(uuid.uuid4()),
                 "model": models[cls.get_model(model)],
