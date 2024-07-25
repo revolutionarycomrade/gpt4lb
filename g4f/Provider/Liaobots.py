@@ -159,6 +159,7 @@ class Liaobots(AsyncGeneratorProvider, ProviderModelMixin):
                 "key": "",
                 "prompt": sys, #kwargs.get("system_message", "You are a helpful assistant."),
             }
+            print("\nSystem:", data["prompt"], "\n\n\n\n")
             print(messages)
             if not cls._auth_code:
                 async with session.post(
